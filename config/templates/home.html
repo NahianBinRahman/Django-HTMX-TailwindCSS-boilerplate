@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load django_htmx %}
+
+<title></title>
+
+{% block content %}
+<section class="container mx-auto my-5">
+    <h1 class="text-3xl text-red-600 font-bold mb-4">Welcome to Your Website</h1>
+    <p class="text-lg">This is the home page of your website.</p>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700" hx-get="{% url 'load_more' %}"
+        hx-trigger="click">Load More</button>
+</section>
+
+{% django_htmx_script %}
+{% endblock %}
